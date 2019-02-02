@@ -21,9 +21,9 @@ Pod::Spec.new do |s|
 x265 is a free software library and application for encoding video streams into the H.265/MPEG-H HEVC compression format.
                        DESC
 
-  s.homepage         = 'https://github.com/lizhuoli1126@126.com/TestLibrary'
-  s.license          = { :type => 'GPL', :file => 'LICENSE' }
-  s.author           = { 'lizhuoli1126@126.com' => 'lizhuoli1126@126.com' }
+  s.homepage         = 'http://x265.org/'
+  s.license          = { :type => 'GPL' }
+  s.author           = 'MulticoreWare'
   s.source           = { :git => 'https://github.com/videolan/x265.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
@@ -31,17 +31,36 @@ x265 is a free software library and application for encoding video streams into 
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
 
-  s.source_files = 'source/x265.{h,cpp}', 'source/x265_config.h', 'source/input/**/*.{h,c,cpp,hpp}', 'source/output/**/*.{h,c,cpp,hpp}', 'source/encoder/**/*.{h,c,cpp,hpp}', 'source/common/**/*.{h,c,cpp,hpp}'
-  # Config the x265 build version string in `x265_config.h`, update when bumped version
-  s.prepare_command = <<-CMD
-                      ls -lash
-                      cp './source/x265_config.h.in' './source/x265_config.h'
-                      sed -i 's/${X265_BUILD}/169/g' './source/x265_config.h'
-                      CMD
   s.public_header_files = 'source/x265.h', 'source/x265_config.h'
-  s.preserve_path = 'source'
+  s.source_files = 'source/x265.{h,cpp}', 'source/x265_config.h'
+  s.subspec 'common' do |ss|
+    ss.source_files = 'source/common/*.{h,c,cpp,hpp}'
+    ss.public_header_files = 'source/x265_config.h' # dummy to mark all as project header
+  end
+
+  s.subspec 'input' do |ss|
+    ss.source_files = 'source/input/*.{h,c,cpp,hpp}'
+    ss.public_header_files = 'source/x265.h', 'source/x265_config.h'
+  end
+
+  s.subspec 'output' do |ss|
+    ss.source_files = 'source/output/*.{h,c,cpp,hpp}'
+    ss.public_header_files = 'source/x265_config.h' # dummy to mark all as project header
+  end
+
+  s.subspec 'encoder' do |ss|
+    ss.source_files = 'source/encoder/*.{h,c,cpp,hpp}'
+    ss.public_header_files = 'source/x265_config.h' # dummy to mark all as project header
+  end
+
+  # config the x265 build version string in `x265_config.h`, update when bumped version
+  s.prepare_command = <<-CMD
+                      cp './source/x265_config.h.in' './source/x265_config.h'
+                      sed -i.bak 's/\\${X265_BUILD}/169/g' './source/x265_config.h'
+                      CMD
   s.xcconfig = {
     'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) X265_DEPTH=8 HAVE_STRTOK_R=1 EXPORT_C_API=1 X265_NS=x265 X265_VERSION=3.0',
-    'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT)/x265/source'
+    'USER_HEADER_SEARCH_PATHS' => '$(PODS_TARGET_SRCROOT)/source'
   }
+  s.libraries = 'c++'
 end
