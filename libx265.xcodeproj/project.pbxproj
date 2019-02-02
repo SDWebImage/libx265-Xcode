@@ -145,7 +145,6 @@
 		3217C265220593F3003D0310 /* nal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nal.h; sourceTree = "<group>"; };
 		3217C266220593F3003D0310 /* ratecontrol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ratecontrol.cpp; sourceTree = "<group>"; };
 		3217C267220593F3003D0310 /* analysis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = analysis.cpp; sourceTree = "<group>"; };
-		3217C268220593F3003D0310 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		3217C269220593F3003D0310 /* entropy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entropy.cpp; sourceTree = "<group>"; };
 		3217C26A220593F3003D0310 /* sao.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sao.cpp; sourceTree = "<group>"; };
 		3217C26B220593F3003D0310 /* slicetype.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slicetype.cpp; sourceTree = "<group>"; };
@@ -180,7 +179,6 @@
 		3217C2A5220593F3003D0310 /* deblock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = deblock.cpp; sourceTree = "<group>"; };
 		3217C2A6220593F3003D0310 /* intrapred.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = intrapred.cpp; sourceTree = "<group>"; };
 		3217C2A7220593F3003D0310 /* frame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = frame.cpp; sourceTree = "<group>"; };
-		3217C2A8220593F3003D0310 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		3217C2A9220593F3003D0310 /* bitstream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bitstream.cpp; sourceTree = "<group>"; };
 		3217C2AA220593F3003D0310 /* predict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = predict.h; sourceTree = "<group>"; };
 		3217C2AB220593F3003D0310 /* threadpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threadpool.h; sourceTree = "<group>"; };
@@ -334,7 +332,6 @@
 				3217C265220593F3003D0310 /* nal.h */,
 				3217C266220593F3003D0310 /* ratecontrol.cpp */,
 				3217C267220593F3003D0310 /* analysis.cpp */,
-				3217C268220593F3003D0310 /* CMakeLists.txt */,
 				3217C269220593F3003D0310 /* entropy.cpp */,
 				3217C26A220593F3003D0310 /* sao.cpp */,
 				3217C26B220593F3003D0310 /* slicetype.cpp */,
@@ -375,7 +372,6 @@
 				3217C2A5220593F3003D0310 /* deblock.cpp */,
 				3217C2A6220593F3003D0310 /* intrapred.cpp */,
 				3217C2A7220593F3003D0310 /* frame.cpp */,
-				3217C2A8220593F3003D0310 /* CMakeLists.txt */,
 				3217C2A9220593F3003D0310 /* bitstream.cpp */,
 				3217C2AA220593F3003D0310 /* predict.h */,
 				3217C2AB220593F3003D0310 /* threadpool.h */,
