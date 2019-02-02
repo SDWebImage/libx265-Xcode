@@ -30,37 +30,58 @@ x265 is a free software library and application for encoding video streams into 
   s.osx.deployment_target = '10.7'
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
+  s.module_map = 'source/libx265.modulemap'
 
-  s.public_header_files = 'source/x265.h', 'source/x265_config.h'
-  s.source_files = 'source/x265.{h,cpp}', 'source/x265_config.h'
+  s.subspec 'x265' do |ss|
+    ss.source_files = 'source/x265.{h,cpp}', 'source/x265_config.h', 'source/x265cli.h'
+    ss.public_header_files = 'source/x265.h', 'source/x265_config.h'
+    ss.dependency 'libx265/common'
+    ss.dependency 'libx265/input'
+    ss.dependency 'libx265/output'
+    ss.dependency 'libx265/encoder'
+  end
+
+  # This subspec is here to pass pod spec lint with all subspecs combination.
+  # Later version may break this and use only `pod spec lint --subspecs=x265`.
+  # Actually you should not use subspecs. It's here because of CocoaPods's bug for same source files name issue (See CocoaPods#8289).
+  s.subspec 'core' do |ss|
+    ss.source_files = 'source/x265.h', 'source/x265_config.h', 'source/input/*.h', 'source/encoder/*.h'
+  end
+
   s.subspec 'common' do |ss|
+    ss.dependency 'libx265/core'
     ss.source_files = 'source/common/*.{h,c,cpp,hpp}'
-    ss.public_header_files = 'source/x265_config.h' # dummy to mark all as project header
+    ss.public_header_files = 'source/common/common.h'
   end
 
   s.subspec 'input' do |ss|
+    ss.dependency 'libx265/common'
     ss.source_files = 'source/input/*.{h,c,cpp,hpp}'
-    ss.public_header_files = 'source/x265.h', 'source/x265_config.h'
+    ss.public_header_files = 'source/input/input.h'
   end
 
   s.subspec 'output' do |ss|
+    ss.dependency 'libx265/common'
     ss.source_files = 'source/output/*.{h,c,cpp,hpp}'
-    ss.public_header_files = 'source/x265_config.h' # dummy to mark all as project header
+    ss.public_header_files = 'source/output/output.h'
   end
 
   s.subspec 'encoder' do |ss|
+    ss.dependency 'libx265/common'
     ss.source_files = 'source/encoder/*.{h,c,cpp,hpp}'
-    ss.public_header_files = 'source/x265_config.h' # dummy to mark all as project header
+    ss.public_header_files = 'source/encoder/encoder.h'
   end
 
   # config the x265 build version string in `x265_config.h`, update when bumped version
   s.prepare_command = <<-CMD
                       cp './source/x265_config.h.in' './source/x265_config.h'
                       sed -i.bak 's/\\${X265_BUILD}/169/g' './source/x265_config.h'
+                      echo -e "framework module libx265 {\n  umbrella header \\"x265.h\\"\n  export *\n  module * { export * }\n}" > ./source/libx265.modulemap
                       CMD
   s.xcconfig = {
     'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) X265_DEPTH=8 HAVE_STRTOK_R=1 EXPORT_C_API=1 X265_NS=x265 X265_VERSION=3.0',
-    'USER_HEADER_SEARCH_PATHS' => '$(PODS_TARGET_SRCROOT)/source'
+    'HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/libx265/source ${PODS_TARGET_SRCROOT}/source'
   }
+  s.preserve_path = 'source'
   s.libraries = 'c++'
 end
