@@ -23,10 +23,20 @@ This repo also including the CocoaPods's spec file to use libx265 with the depen
 
 ## Installation
 
+### Carthage
+
 libx265 is (via this repo) available through [Carthage](https://github.com/Carthage/Carthage).
 
 ```
 github "SDWebImage/libx265-Xcode"
+```
+
+### CocoaPods
+
+libx265 is available through [CocoaPods](https://github.com/CocoaPods/CocoaPods).
+
+```
+pod 'libx265'
 ```
 
 ## Usage
