@@ -16,8 +16,8 @@ This repo also including the CocoaPods's spec file to use libx265 with the depen
 
 ## Requirements
 
-+ iOS 8
-+ macOS 10.9
++ iOS 9.0
++ macOS 10.11
 + tvOS 9.0
 + watchOS 2.0
 

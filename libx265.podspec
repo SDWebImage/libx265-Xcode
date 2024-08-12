@@ -27,7 +27,7 @@ x265 is a free software library and application for encoding video streams into 
   s.source           = { :git => 'https://github.com/videolan/x265.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
-  s.osx.deployment_target = '10.10'
+  s.osx.deployment_target = '10.11'
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
   s.module_map = 'source/libx265.modulemap'
