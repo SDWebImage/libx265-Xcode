@@ -10,18 +10,31 @@ A wrapper for [libx265](https://github.com/videolan/x265) + Xcode project.
 
 libx265 is a free software library and application for encoding video streams into the H.265/MPEG-H HEVC compression format.
 
-This enables Carthage support.
+This enables Carthage and SwiftPM support.
 
 This repo also including the CocoaPods's spec file to use libx265 with the dependency management instead of the vendored library.
 
 ## Requirements
 
 + iOS 8
-+ macOS 10.7
++ macOS 10.9
 + tvOS 9.0
 + watchOS 2.0
 
 ## Installation
+
+### SwiftPM
+
+libx265 is available through [Swift Package Manager](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg).
+
+```swift
+let package = Package(
+    dependencies: [
+        .package(url: "https://github.com/SDWebImage/libx265-Xcode", from: "3.4.0")
+    ],
+    // ...
+)
+```
 
 ### Carthage
 
