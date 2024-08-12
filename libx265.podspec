@@ -32,48 +32,17 @@ x265 is a free software library and application for encoding video streams into 
   s.watchos.deployment_target = '2.0'
   s.module_map = 'source/libx265.modulemap'
 
-  s.subspec 'x265' do |ss|
-    ss.source_files = 'source/x265.h', 'source/x265_config.h'
-    ss.public_header_files = 'source/x265.h', 'source/x265_config.h'
-    ss.dependency 'libx265/core'
-    ss.dependency 'libx265/common'
-    ss.dependency 'libx265/input'
-    ss.dependency 'libx265/output'
-    ss.dependency 'libx265/encoder'
-  end
-
-  s.subspec 'core' do |ss|
-    ss.source_files = 'source/x265.h', 'source/x265_config.h'
-  end
-
-  s.subspec 'common' do |ss|
-    ss.dependency 'libx265/core'
-    ss.source_files = 'source/common/*.{h,c,cpp,hpp}', 'source/encoder/*.h'
-    ss.public_header_files = 'source/common/common.h'
-  end
-
-  s.subspec 'input' do |ss|
-    ss.dependency 'libx265/common'
-    ss.source_files = 'source/input/*.{h,c,cpp,hpp}'
-    ss.public_header_files = 'source/input/input.h'
-  end
-
-  s.subspec 'output' do |ss|
-    ss.dependency 'libx265/input'
-    ss.source_files = 'source/output/*.{h,c,cpp,hpp}'
-    ss.public_header_files = 'source/output/output.h'
-  end
-
-  s.subspec 'encoder' do |ss|
-    ss.dependency 'libx265/output'
-    ss.source_files = 'source/encoder/*.{h,c,cpp,hpp}'
-    ss.public_header_files = 'source/encoder/encoder.h'
-  end
+  s.source_files = 'source/x265.h', 'source/x265_config.h',
+  'source/common/*.{h,c,cpp,hpp}',
+  'source/input/*.{h,c,cpp,hpp}',
+  'source/output/*.{h,c,cpp,hpp}',
+  'source/encoder/*.{h,c,cpp,hpp}'
+  s.public_header_files = 'source/x265.h', 'source/x265_config.h'
 
   # config the x265 build version string in `x265_config.h`, update when bumped version
   s.prepare_command = <<-CMD
                       cp './source/x265_config.h.in' './source/x265_config.h'
-                      sed -i.bak 's/\\${X265_BUILD}/169/g' './source/x265_config.h'
+                      sed -i.bak 's/\\${X265_BUILD}/192/g' './source/x265_config.h'
                       echo -e "framework module libx265 {\n  umbrella header \\"x265.h\\"\n  export *\n  module * { export * }\n}" > ./source/libx265.modulemap
                       CMD
   s.xcconfig = {
