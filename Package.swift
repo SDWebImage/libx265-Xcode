@@ -24,8 +24,8 @@ let package = Package(
             name: "libx265",
             dependencies: [],
             path: ".",
-            exclude: ["x265/source/common/arm", "x265/source/common/ppc", "x265/source/common/x86", "x265/source/common/vec"],
-            sources: ["x265/source/common", "x265/source/input", "x265/source/output", "x265/source/encoder", "x265/source/x265.cpp"],
+            exclude: ["x265/source/common/arm", "x265/source/common/aarch64", "x265/source/common/ppc", "x265/source/common/x86", "x265/source/common/vec"],
+            sources: ["x265/source/common", "x265/source/input", "x265/source/output", "x265/source/encoder"],
             publicHeadersPath: "include",
             cSettings: [.headerSearchPath("x265/source"),
                         .headerSearchPath("x265/source/common"),
@@ -34,7 +34,7 @@ let package = Package(
                         .define("HAVE_STRTOK_R", to: "1"),
                         .define("EXPORT_C_API", to: "1"),
                         .define("X265_NS", to: "x265"),
-                        .define("X265_VERSION", to: "3.0")]
+                        .define("X265_VERSION", to: "3.4")]
         )
     ],
     cLanguageStandard: .gnu11,

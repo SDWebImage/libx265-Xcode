@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320151722C69F76700B9EE59 /* scaler.h in Headers */ = {isa = PBXBuildFile; fileRef = 320151702C69F76700B9EE59 /* scaler.h */; };
+		320151732C69F76700B9EE59 /* scaler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 320151712C69F76700B9EE59 /* scaler.cpp */; };
+		320151752C69F78900B9EE59 /* svt.h in Headers */ = {isa = PBXBuildFile; fileRef = 320151742C69F78900B9EE59 /* svt.h */; };
 		3207146D2C69EF66006D2A33 /* x265_config.h in Headers */ = {isa = PBXBuildFile; fileRef = 3207146C2C69EF66006D2A33 /* x265_config.h */; };
 		3217C455220593F3003D0310 /* nal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3217C260220593F3003D0310 /* nal.cpp */; };
 		3217C456220593F3003D0310 /* bitcost.h in Headers */ = {isa = PBXBuildFile; fileRef = 3217C261220593F3003D0310 /* bitcost.h */; };
@@ -100,7 +103,6 @@
 		3217C50B220593F4003D0310 /* predict.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3217C31E220593F3003D0310 /* predict.cpp */; };
 		3217C50C220593F4003D0310 /* dct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3217C31F220593F3003D0310 /* dct.cpp */; };
 		3217C50D220593F4003D0310 /* shortyuv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3217C320220593F3003D0310 /* shortyuv.cpp */; };
-		3217C51B220593F4003D0310 /* x265.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3217C331220593F3003D0310 /* x265.cpp */; };
 		3217C5CF220594F6003D0310 /* y4m.h in Headers */ = {isa = PBXBuildFile; fileRef = 3217C5BE220594F6003D0310 /* y4m.h */; };
 		3217C5D0220594F6003D0310 /* input.h in Headers */ = {isa = PBXBuildFile; fileRef = 3217C5BF220594F6003D0310 /* input.h */; };
 		3217C5D1220594F6003D0310 /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3217C5C0220594F6003D0310 /* input.cpp */; };
@@ -135,6 +137,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		320151702C69F76700B9EE59 /* scaler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scaler.h; sourceTree = "<group>"; };
+		320151712C69F76700B9EE59 /* scaler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scaler.cpp; sourceTree = "<group>"; };
+		320151742C69F78900B9EE59 /* svt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = svt.h; sourceTree = "<group>"; };
 		3207146C2C69EF66006D2A33 /* x265_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x265_config.h; sourceTree = "<group>"; };
 		3217BE8C220591C9003D0310 /* libx265.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libx265.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3217C260220593F3003D0310 /* nal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nal.cpp; sourceTree = "<group>"; };
@@ -230,7 +235,6 @@
 		3217C31E220593F3003D0310 /* predict.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = predict.cpp; sourceTree = "<group>"; };
 		3217C31F220593F3003D0310 /* dct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dct.cpp; sourceTree = "<group>"; };
 		3217C320220593F3003D0310 /* shortyuv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shortyuv.cpp; sourceTree = "<group>"; };
-		3217C331220593F3003D0310 /* x265.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = x265.cpp; sourceTree = "<group>"; };
 		3217C5BB22059499003D0310 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3217C5BE220594F6003D0310 /* y4m.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = y4m.h; sourceTree = "<group>"; };
 		3217C5BF220594F6003D0310 /* input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
@@ -324,7 +328,6 @@
 				3217C5C4220594F6003D0310 /* output */,
 				3217C25F220593F3003D0310 /* encoder */,
 				3217C284220593F3003D0310 /* x265.h */,
-				3217C331220593F3003D0310 /* x265.cpp */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 		3217C25F220593F3003D0310 /* encoder */ = {
 			isa = PBXGroup;
 			children = (
+				320151742C69F78900B9EE59 /* svt.h */,
 				3217C260220593F3003D0310 /* nal.cpp */,
 				3217C261220593F3003D0310 /* bitcost.h */,
 				3217C262220593F3003D0310 /* framefilter.h */,
@@ -374,6 +378,8 @@
 		3217C2A1220593F3003D0310 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				320151712C69F76700B9EE59 /* scaler.cpp */,
+				320151702C69F76700B9EE59 /* scaler.h */,
 				3217C2A2220593F3003D0310 /* deblock.h */,
 				3217C2A3220593F3003D0310 /* md5.cpp */,
 				3217C2A4220593F3003D0310 /* common.cpp */,
@@ -489,6 +495,7 @@
 			files = (
 				3217C5D5220594F6003D0310 /* y4m.h in Headers */,
 				3217C4BC220593F4003D0310 /* param.h in Headers */,
+				320151722C69F76700B9EE59 /* scaler.h in Headers */,
 				3217C4B6220593F4003D0310 /* shortyuv.h in Headers */,
 				3207146D2C69EF66006D2A33 /* x265_config.h in Headers */,
 				3217C465220593F3003D0310 /* entropy.h in Headers */,
@@ -508,6 +515,7 @@
 				3217C509220593F4003D0310 /* primitives.h in Headers */,
 				3217C5D4220594F6003D0310 /* yuv.h in Headers */,
 				3217C4A0220593F4003D0310 /* quant.h in Headers */,
+				320151752C69F78900B9EE59 /* svt.h in Headers */,
 				3217C457220593F3003D0310 /* framefilter.h in Headers */,
 				3217C5D0220594F6003D0310 /* input.h in Headers */,
 				3217C475220593F3003D0310 /* slicetype.h in Headers */,
@@ -636,7 +644,6 @@
 				3217C49E220593F4003D0310 /* wavefront.cpp in Sources */,
 				3217C5D1220594F6003D0310 /* input.cpp in Sources */,
 				3217C5DA220594F6003D0310 /* output.cpp in Sources */,
-				3217C51B220593F4003D0310 /* x265.cpp in Sources */,
 				3217C4C2220593F4003D0310 /* param.cpp in Sources */,
 				3217C46C220593F3003D0310 /* search.cpp in Sources */,
 				3217C5DF22059831003D0310 /* api.cpp in Sources */,
@@ -686,6 +693,7 @@
 				3217C5D2220594F6003D0310 /* y4m.cpp in Sources */,
 				3217C4B4220593F4003D0310 /* picyuv.cpp in Sources */,
 				3217C4B3220593F4003D0310 /* quant.cpp in Sources */,
+				320151732C69F76700B9EE59 /* scaler.cpp in Sources */,
 				3217C4ED220593F4003D0310 /* lowpassdct.cpp in Sources */,
 				3217C4B8220593F4003D0310 /* cudata.cpp in Sources */,
 				3217C46E220593F3003D0310 /* dpb.cpp in Sources */,
@@ -846,7 +854,7 @@
 					"HAVE_STRTOK_R=1",
 					"EXPORT_C_API=1",
 					"X265_NS=x265",
-					"X265_VERSION=3.0",
+					"X265_VERSION=3.4",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Xcode/Info.plist";
@@ -880,7 +888,7 @@
 					"HAVE_STRTOK_R=1",
 					"EXPORT_C_API=1",
 					"X265_NS=x265",
-					"X265_VERSION=3.0",
+					"X265_VERSION=3.4",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Xcode/Info.plist";
