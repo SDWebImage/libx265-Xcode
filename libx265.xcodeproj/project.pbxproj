@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3217C22E22059329003D0310 /* x265_config.h in Headers */ = {isa = PBXBuildFile; fileRef = 3217C22D22059329003D0310 /* x265_config.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3207146D2C69EF66006D2A33 /* x265_config.h in Headers */ = {isa = PBXBuildFile; fileRef = 3207146C2C69EF66006D2A33 /* x265_config.h */; };
 		3217C455220593F3003D0310 /* nal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3217C260220593F3003D0310 /* nal.cpp */; };
 		3217C456220593F3003D0310 /* bitcost.h in Headers */ = {isa = PBXBuildFile; fileRef = 3217C261220593F3003D0310 /* bitcost.h */; };
 		3217C457220593F3003D0310 /* framefilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3217C262220593F3003D0310 /* framefilter.h */; };
@@ -135,8 +135,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3207146C2C69EF66006D2A33 /* x265_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x265_config.h; sourceTree = "<group>"; };
 		3217BE8C220591C9003D0310 /* libx265.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libx265.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3217C22D22059329003D0310 /* x265_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x265_config.h; sourceTree = "<group>"; };
 		3217C260220593F3003D0310 /* nal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nal.cpp; sourceTree = "<group>"; };
 		3217C261220593F3003D0310 /* bitcost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitcost.h; sourceTree = "<group>"; };
 		3217C262220593F3003D0310 /* framefilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framefilter.h; sourceTree = "<group>"; };
@@ -271,10 +271,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3207146B2C69EF66006D2A33 /* generate */ = {
+			isa = PBXGroup;
+			children = (
+				3207146C2C69EF66006D2A33 /* x265_config.h */,
+			);
+			path = generate;
+			sourceTree = "<group>";
+		};
 		3217BE82220591C9003D0310 = {
 			isa = PBXGroup;
 			children = (
-				3217C22D22059329003D0310 /* x265_config.h */,
+				3207146B2C69EF66006D2A33 /* generate */,
 				3217C22F220593F3003D0310 /* x265 */,
 				3217BE97220591EE003D0310 /* Xcode */,
 				3217C5E522059A8C003D0310 /* libx265Example */,
@@ -482,6 +490,7 @@
 				3217C5D5220594F6003D0310 /* y4m.h in Headers */,
 				3217C4BC220593F4003D0310 /* param.h in Headers */,
 				3217C4B6220593F4003D0310 /* shortyuv.h in Headers */,
+				3207146D2C69EF66006D2A33 /* x265_config.h in Headers */,
 				3217C465220593F3003D0310 /* entropy.h in Headers */,
 				3217C4EE220593F4003D0310 /* wavefront.h in Headers */,
 				3217C5D8220594F6003D0310 /* yuv.h in Headers */,
@@ -506,7 +515,6 @@
 				3217C49C220593F4003D0310 /* threadpool.h in Headers */,
 				3217C4A1220593F4003D0310 /* scalinglist.h in Headers */,
 				3217C470220593F3003D0310 /* ratecontrol.h in Headers */,
-				3217C22E22059329003D0310 /* x265_config.h in Headers */,
 				3217C5CF220594F6003D0310 /* y4m.h in Headers */,
 				3217C5DE220594F6003D0310 /* reconplay.h in Headers */,
 				3217C4EF220593F4003D0310 /* cudata.h in Headers */,
